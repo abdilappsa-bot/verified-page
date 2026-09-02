@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Verified</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      /* Subtle yellow-tinted lined background pattern */
+      background-image: repeating-linear-gradient(
+        90deg,
+        #fafafa,
+        #fafafa 19px,
+        #f5f3e6 19px,
+        #f5f3e6 20px
+      );
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #f0f0f0;
+      border-top: 4px solid #ffed10; /* Yellow top border detail */
+      border-radius: 12px;
+      padding: 40px 30px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      background-color: #fffde6;
+      border: 2px solid #ffed10;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px auto;
+    }
+
+    .icon-container svg {
+      width: 30px;
+      height: 30px;
+      fill: #111111;
+    }
+
+    h1 {
+      color: #111111;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .arabic-text {
+      color: #111111;
+      font-size: 24px;
+      font-weight: 600;
+      direction: rtl;
+      margin-top: 6px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .divider {
+      height: 2px;
+      background-color: #ffed10;
+      width: 80px;
+      margin: 0 auto 24px auto;
+      border-radius: 2px;
+    }
+
+    p {
+      color: #555555;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      background-color: #ffed10;
+      color: #111111;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon-container">
+      <!-- Simple checkmark icon -->
+      <svg viewBox="0 0 24 24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+    </div>
+
+    <h1>Your account is verified</h1>
+    <div class="arabic-text">تم التحقق من حسابك</div>
+
+    <div class="divider"></div>
+
+    <p>You can now return to the app or close this window.</p>
+
+    <a href="#" class="btn">Continue to App</a>
+  </div>
+
+</body>
+</html>
