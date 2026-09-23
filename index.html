@@ -3,148 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account Verified / تم التحقق من الحساب</title>
-  <!-- Google Fonts for Cairo (Arabic) and Inter (English) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <title>Account Verified</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      transition: all 0.25s ease;
     }
-
-    :root {
-      --primary-color: #4CA154;
-      --primary-light: #f0f8f1;
-      --text-dark: #1f2937;
-      --text-muted: #4b5563;
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --border-color: #e2e8f0;
-    }
-
+    
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8fafc;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      color: var(--text-dark);
     }
 
-    /* RTL specific font adjustment */
-    [dir="rtl"] body {
-      font-family: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    /* Language Switcher */
     .lang-switcher-container {
       margin-bottom: 20px;
     }
 
-    .lang-toggle-btn {
-      background-color: #ffffff;
-      border: 1px solid var(--border-color);
-      color: var(--text-dark);
+    .lang-btn {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #334155;
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
     }
 
-    .lang-toggle-btn:hover {
-      border-color: var(--primary-color);
-      color: var(--primary-color);
-      background-color: var(--primary-light);
+    .lang-btn:hover {
+      background-color: #f1f5f9;
+      border-color: #cbd5e1;
     }
 
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-top: 5px solid var(--primary-color);
-      border-radius: 16px;
-      padding: 44px 32px;
-      max-width: 460px;
+      background: #ffffff;
+      border: 1px solid #f0f0f0;
+      border-top: 4px solid #4CA154;
+      border-radius: 12px;
+      padding: 40px 30px;
+      max-width: 480px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
 
     .icon-container {
-      width: 68px;
-      height: 68px;
-      background-color: var(--primary-light);
-      border: 2px solid var(--primary-color);
+      width: 60px;
+      height: 60px;
+      background-color: #f0fdf4;
+      border: 2px solid #4CA154;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 24px auto;
-      box-shadow: 0 4px 12px rgba(76, 161, 84, 0.15);
     }
 
     .icon-container svg {
-      width: 34px;
-      height: 34px;
-      fill: var(--primary-color);
+      width: 30px;
+      height: 30px;
+      fill: #4CA154;
     }
 
     h1 {
-      color: var(--text-dark);
-      font-size: 24px;
+      color: #111111;
+      font-size: 26px;
       font-weight: 700;
       margin-bottom: 12px;
-      line-height: 1.3;
     }
 
     .divider {
-      height: 3px;
-      background-color: var(--primary-color);
-      width: 60px;
-      margin: 16px auto 24px auto;
-      border-radius: 3px;
+      height: 2px;
+      background-color: #4CA154;
+      width: 80px;
+      margin: 0 auto 24px auto;
+      border-radius: 2px;
     }
 
-    p.subtitle {
-      color: var(--text-muted);
+    .description {
+      color: #555555;
       font-size: 15px;
+      line-height: 1.5;
       margin-bottom: 16px;
-      line-height: 1.6;
     }
 
-    /* Plain text style for continuation instruction (No buttons, no links) */
-    p.continue-text {
-      color: var(--primary-color);
-      font-weight: 600;
+    .continue-text {
+      color: #4CA154;
       font-size: 16px;
+      font-weight: 600;
       line-height: 1.5;
-      margin-top: 8px;
     }
   </style>
 </head>
 <body>
 
   <div class="lang-switcher-container">
-    <button class="lang-toggle-btn" id="langToggleBtn" onclick="toggleLanguage()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
-      <span id="langBtnText">العربية</span>
-    </button>
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">العربية</button>
   </div>
 
   <div class="card">
@@ -158,48 +121,42 @@
 
     <div class="divider"></div>
 
-    <p class="subtitle" id="subtitleText">You can now return to the app or close this window.</p>
+    <p class="description" id="descText">You can now return to the app or close this window.</p>
     
-    <!-- Pure static text instead of link or button -->
     <p class="continue-text" id="continueText">Continue to the app and login</p>
   </div>
 
   <script>
-    // Language translations
+    let currentLang = 'en';
+
     const translations = {
       en: {
-        dir: "ltr",
-        lang: "en",
         title: "Your account is verified",
-        subtitle: "You can now return to the app or close this window.",
-        continueText: "Continue to the app and login",
-        toggleBtn: "العربية"
+        desc: "You can now return to the app or close this window.",
+        continue: "Continue to the app and login",
+        buttonText: "العربية",
+        dir: "ltr"
       },
       ar: {
-        dir: "rtl",
-        lang: "ar",
-        title: "تم التحقق من حسابك بنجاح",
-        subtitle: "يمكنك الآن العودة إلى التطبيق أو إغلاق هذه النافذة.",
-        continueText: "متابعة إلى التطبيق وتسجيل الدخول",
-        toggleBtn: "English"
+        title: "تم التحقق من حسابك",
+        desc: "يمكنك الآن العودة إلى التطبيق أو إغلاق هذه النافذة.",
+        continue: "متابعة إلى التطبيق وتسجيل الدخول",
+        buttonText: "English",
+        dir: "rtl"
       }
     };
 
-    let currentLang = "en";
-
     function toggleLanguage() {
-      currentLang = currentLang === "en" ? "ar" : "en";
-      const t = translations[currentLang];
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      const langData = translations[currentLang];
 
-      // Update HTML attributes for layout direction & language
-      document.documentElement.setAttribute("dir", t.dir);
-      document.documentElement.setAttribute("lang", t.lang);
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = langData.dir;
 
-      // Update Text Content
-      document.getElementById("titleText").innerText = t.title;
-      document.getElementById("subtitleText").innerText = t.subtitle;
-      document.getElementById("continueText").innerText = t.continueText;
-      document.getElementById("langBtnText").innerText = t.toggleBtn;
+      document.getElementById('titleText').textContent = langData.title;
+      document.getElementById('descText').textContent = langData.desc;
+      document.getElementById('continueText').textContent = langData.continue;
+      document.getElementById('langToggle').textContent = langData.buttonText;
     }
   </script>
 </body>
