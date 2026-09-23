@@ -19,10 +19,9 @@
 
     :root {
       --primary-color: #4CA154;
-      --primary-hover: #3d8843;
       --primary-light: #f0f8f1;
       --text-dark: #1f2937;
-      --text-muted: #6b7280;
+      --text-muted: #4b5563;
       --bg-color: #f8fafc;
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
@@ -45,6 +44,7 @@
       font-family: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
+    /* Language Switcher */
     .lang-switcher-container {
       margin-bottom: 20px;
     }
@@ -80,7 +80,6 @@
       width: 100%;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-      position: relative;
     }
 
     .icon-container {
@@ -121,26 +120,17 @@
     p.subtitle {
       color: var(--text-muted);
       font-size: 15px;
-      margin-bottom: 24px;
-      line-height: 1.5;
+      margin-bottom: 16px;
+      line-height: 1.6;
     }
 
-    .continue-link {
-      display: inline-block;
+    /* Plain text style for continuation instruction (No buttons, no links) */
+    p.continue-text {
       color: var(--primary-color);
       font-weight: 600;
       font-size: 16px;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-    }
-
-    .continue-link:hover {
-      color: var(--primary-hover);
-      text-decoration: underline;
-      background-color: var(--primary-light);
+      line-height: 1.5;
+      margin-top: 8px;
     }
   </style>
 </head>
@@ -169,20 +159,20 @@
     <div class="divider"></div>
 
     <p class="subtitle" id="subtitleText">You can now return to the app or close this window.</p>
-
-    <!-- Continuation text link instead of a solid button -->
-    <a href="#" class="continue-link" id="continueLink">Continue to the app and login &rarr;</a>
+    
+    <!-- Pure static text instead of link or button -->
+    <p class="continue-text" id="continueText">Continue to the app and login</p>
   </div>
 
   <script>
-    // Language content definitions
+    // Language translations
     const translations = {
       en: {
         dir: "ltr",
         lang: "en",
         title: "Your account is verified",
         subtitle: "You can now return to the app or close this window.",
-        continueText: "Continue to the app and login &rarr;",
+        continueText: "Continue to the app and login",
         toggleBtn: "العربية"
       },
       ar: {
@@ -190,7 +180,7 @@
         lang: "ar",
         title: "تم التحقق من حسابك بنجاح",
         subtitle: "يمكنك الآن العودة إلى التطبيق أو إغلاق هذه النافذة.",
-        continueText: "&leftarrow; متابعة إلى التطبيق وتسجيل الدخول",
+        continueText: "متابعة إلى التطبيق وتسجيل الدخول",
         toggleBtn: "English"
       }
     };
@@ -208,7 +198,7 @@
       // Update Text Content
       document.getElementById("titleText").innerText = t.title;
       document.getElementById("subtitleText").innerText = t.subtitle;
-      document.getElementById("continueLink").innerHTML = t.continueText;
+      document.getElementById("continueText").innerText = t.continueText;
       document.getElementById("langBtnText").innerText = t.toggleBtn;
     }
   </script>
